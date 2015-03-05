@@ -1,0 +1,115 @@
+\documentclass[a4paper,oneside,DIV8,10pt]{scrartcl}
+\usepackage[a4paper, top=30mm, left=40mm, right=40mm, bottom=30mm,headsep=10mm, footskip=12mm]{geometry} 
+\usepackage[backend=biber,  citestyle=verbose-ibid]{biblatex}
+\addbibresource[datatype=bibtex]{/Users/Hybr1s/Documents/ma_produktion/Quellenverzeichnis.bib}
+
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Einbinden weiterer Pakete
+\usepackage{xltxtra}
+\usepackage[ngerman]{babel}
+\usepackage{nameref}
+
+\setlength{\parindent}{0em} %Setzt die standartmäßige Einrückung bei neuen Absätzen auf 0
+\deffootnote{1em}{1em}{\textsuperscript{\thefootnotemark\ }}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\usepackage{graphicx}
+\usepackage{setspace} 
+\usepackage{capt-of}
+\usepackage{subfig}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{mathtools}
+
+\newcommand{\lz}[3]{\begin{singlespace} \begin{quotation}\glqq #1\grqq \footnote{Siehe #2, {#3}} \end{quotation} \end{singlespace} }
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Deklaration eigener Mathematik-Makros
+  %\newcommand{\N}{\ensuremath{\mathbf{N}}}   % natuerliche Zahlen
+  %\newcommand{\Z}{\ensuremath{\mathbf{Z}}}   % ganze Zahlen
+  %\newcommand{\Q}{\ensuremath{\mathbf{Q}}}   % rationale Zahlen
+  %\newcommand{\R}{\ensuremath{\mathbf{R}}}   % reelle Zahlen
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Deklaration eigener Satz-/Definitions-/Beweisumgebungen mit amsthm
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Deklaration weiterer Makros
+  \renewcommand{\labelitemi}{--}             % aendert die Symbole bei unnumerierten Aufzaehlungen
+  \makeatletter                              % Fussnote ohne Symbol
+  %  \def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+  % Titel des Handouts
+  %   #1 Name des Vortragenden
+  %   #2 email-Adresse 
+  %   #3 Datum des Vortrags
+  %   #4 Titel des Vortrags
+  \newcommand{\handouttitle}[4]
+   {\begin{center}
+      \Large #4
+    \end{center}
+
+    \bigskip
+
+    \noindent
+    #1 
+    #2
+        \hfill
+    #3 \\
+  
+    \noindent
+    \rule{\linewidth}{.5pt}
+
+    \bigskip
+
+    \@afterindentfalse\@afterheading
+   }
+  \makeatother
+  \renewcommand{\sectfont}{\normalfont}       % aendert den Font fuer Ueberschriften
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Anfang des eigentlichen Dokuments
+\begin{document}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesection}{\Roman{section}}
+\pagenumbering{Roman}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesection}{\arabic{section}}
+\setcounter{section}{0}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+  % Titel fuer das Handout -- Sie koennen natuerlich auch selbst etwas entwerfen!
+  \handouttitle{David Penndorf}
+               {Matr.-Nr: 947972 \\ MA Medien und Gesellschaft}
+               {3. März 2015}
+               { Exposé: \glqq Grass Route\grqq \\ Technische Unterstützung transformativer \\ Initiativen in Siegen}
+               
+%%%%%%%%%%%%%%%%%%%%%%%%INHALT%%%%%%%%%%%%%%%%%
+\onehalfspacing
+Im Oktober 2008 entschied sich die Stadt Siegen im Rahmen des Workshops \glqq Zukunftsfragen zum demografischen Wandel\grqq ~aktiv gegen die Folgen des demografischen Wandels vorzugehen. Nach den Prognosen wird die Bewohnerzahl der Stadt sinken und das Durchschnittsalter steigen.\footnote{Vgl. \url{http://www.stadtumbaunrw.de/pdf/dokumente/siegen_dokumentation.pdf}, S. 87, Zugriff am 2. März 2015.}
+Als Beleg dafür kann die 2011 durchgeführte Volkszählung betrachtet werden, nach welcher in Siegen inzwischen weniger als 100.000 Menschen leben, was zur Folge hatte, dass der Stadt der Großstadt-Status aberkannt wurde.\footnote{Vgl. \url{http://www.welt.de/wirtschaft/article116697033/Die-Deutschen-das-Volk-der-Mieter.html}, Zugriff am 2. März 2015.}
+
+In dem Workshop wird neben dem schlechten Image der Stadt und der defizitären Infrastruktur insbesondere fehlendes bürgerliche Engagement als eine der größten Schwächen Siegens benannt. In der Dokumentation heißt es:
+\vspace{-0.5cm}
+\lz{Das als wichtiges unterstützendes Element wahrgenommene bürgerliche Engagement ist in einigen Bereichen noch nicht sehr stark ausgeprägt. Hier fehlen wichtige Impulse, um diese Bereitschaft in der Siegener Bevölkerung nachhaltig zu wecken und zu stärken. Ein wesentlicher Faktor, der hierbei angepasst werden müsste, sind die in die Jahre gekommenen Vereinsstrukturen.}{\url{http://www.stadtumbaunrw.de/pdf/dokumente/siegen_dokumentation.pdf}}{S. 91, Zugriff am 2. März 2015}
+
+Dies soll der Ausgangspunkt für mein Sozioinformatikprojekt sein. Projekten, welche durch die Politik \glqq von Oben\grqq ~oktroyiert wurden, fehlt oft die Fähigkeit, andere Menschen zu begeistern und damit zu aktivieren. Für das Thema bürgerliches Engagement sind daher die sogenannten Graswurzelbewegung in den Fokus zu rücken, da diese ein in der Bevölkerung bereits vorhandenes Interessen widerspiegeln. Mit dem Ziel, dieses Engagement zu stärken, sollten Förderprojekte somit auch bei diesen Bewegungen ansetzen, um diese zu erhalten und auszubauen.
+
+Im ersten Schritt soll sich ein Überblick über die Bottom-Up-Kultur in Siegen verschafft werden. 
+Es ist zu vermuten, dass viele derartige Projektideen nur in einem kleinen Kreis von Menschen angedacht werden und nie eine größere Öffentlichkeit erreichen. Aus diesem Grund wird das Vereinsrregister der Stadt Siegen als Ausgangspunkt herangezogen. Diese Datenbasis gilt es mit einem Kriterienkatalog für Graswurzelbewegungen zu erweitern. So sollte eine aktualisierbare Datenbank über die bürgerlichen Initiativen Siegens erstellt werden können, welche auch dem Scoutopia-Projekt als Grundlage dienen könnte.
+
+Im zweiten Schritt soll Kontakt zu einer qualitativen Auswahl potentiell interessanter Initiativen aufgenommen werden. Mittels qualitativer Interviews als Ausgangsbasis und zur Erschließung des Feldes, soll sich über das Wirken der Gruppen informiert werden und so Ansatzpunkte zur technischen Unterstützung offengelegt werden. Abhängig von dem ersten Eindruck des Feldes könnten auch anderen Methoden herangezogen werden. 
+
+Im dritten Schritt sollen die empirischen Erkenntnisse der Feldstudie in \glqq Implications for Design\grqq ~für technische Unterstützungswerkzeuge überführt werden, welche dann in einem vierten Schritt prototypisch umgesetzt werden sollen. Die konkrete Form des Prototypen sowie seine technische Untermauerung soll sich explizit aus dem Feld ergeben. Als Beispiele wären hier klickbare Demonstratoren über Axure oder vergleichbare Tools, aber durchaus auch ein modifiziertes CMS denkbar. Der entwickelte Prototyp soll abschließend durch und mit potenziellen Endnutzern unter Verwendung etablierter Methoden aus der HCI (z.B. Usertests mit \glqq Thinking Aloud\grqq ) evaluiert werden.
+
+Ziel dieser Arbeit ist es, eine im Feld und an empirischen Nutzerbedarfen fundierte, Technologie zu konzeptionieren, welche das ehrenamtliche Engagement in Siegen unterstützen kann. Sekundär soll eine Grundlage für weiterführende Forschungen geschaffen und weitere Ansatzpunkte für andere Projekte aufgezeigt werden. 
+
+\subsection*{Zeitplan}
+\begin{itemize}
+\item Bis 5. März: Erstellen der Datenbank und des Kriterienkatalogs 
+\item Bis 15. März: Qualitative Erschließung des Feldes
+\item Bis 24. März: Entwicklung und Evaluation der Prototypen
+\item Bis 31. März: Ausarbeitung und Abgabe
+\end{itemize}
+\end{document}
