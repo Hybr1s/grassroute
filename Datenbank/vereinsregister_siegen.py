@@ -4,11 +4,14 @@ import codecs
 import urllib
 import csv
 
-soup = BeautifulSoup(codecs.open("vereinsregister.html", "r", "iso-8859-1"))
+#Bei der Seite http://www.siegen.de/vereinsregister/page.sys/62.htm wird eine leere Suchanfrage gestellt, 
+#wodurch alle Datensaetze zurueckgegeben werden. Der Response wurde manuel als vereinsregister.html gespeichert
+
+soup = BeautifulSoup(codecs.open("vereinsregister.html", "r", "iso-8859-1")) 
 stuff = soup.find_all("div", class_="content_padding")
 links = list(map(lambda x: x["href"], stuff[0].find_all("a")))
 
-with open('endfile2.csv', 'w') as csvfile:
+with open('VereinsregisterSiegen.csv', 'w') as csvfile:
 	fieldnames = ['Name','Beschreibung','Anschrift','PLZ','Stadt','Ansprechpartner','Telefon', 'Telefax', 'Mail', 'Website']
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	
@@ -16,23 +19,23 @@ with open('endfile2.csv', 'w') as csvfile:
 
 	for i in links:
 		verein = BeautifulSoup(urllib.urlopen(i).read())
-		morestuff = str(verein.find_all("div", class_="content_padding")[0])
-		morestuff = morestuff.replace('<br>','')
-		morestuff = morestuff.replace('<div class=\"content_padding\">','')
-		morestuff = morestuff.replace('</strong>','')
-		morestuff = morestuff.replace('<strong>','')
-		morestuff = morestuff.replace('<a class="link" href=','')
-		morestuff = morestuff.replace('<a class="link" href="','')
-		morestuff = morestuff.split('" target="_blank"><u>')[0]
-		morestuff = morestuff.replace('</u></a>','')
-		morestuff = morestuff.replace('<a class=\"olsbutton\"','')
-		morestuff = morestuff.split('href="page.')[0]
-		moremorestuff = morestuff.split('\"mailto')
-		morestuff = moremorestuff[0]+moremorestuff[1].split('\"><u>')[1]
-		morestuff = morestuff.replace('\"','')
-		morestuff = morestuff.split('<div class=sondermodule_hg_hell>')[0]
+		content = str(verein.find_all("div", class_="content_padding")[0])
+		content = content.replace('<br>','')
+		content = content.replace('<div class=\"content_padding\">','')
+		content = content.replace('</strong>','')
+		content = content.replace('<strong>','')
+		content = content.replace('<a class="link" href=','')
+		content = content.replace('<a class="link" href="','')
+		content = content.split('" target="_blank"><u>')[0]
+		content = content.replace('</u></a>','')
+		content = content.replace('<a class=\"olsbutton\"','')
+		content = content.split('href="page.')[0]
+		content_list = content.split('\"mailto')
+		content = content_list[0]+content_list[1].split('\"><u>')[1]
+		content = content.replace('\"','')
+		content = content.split('<div class=sondermodule_hg_hell>')[0]
 		
-		striped_lines=morestuff.split('\n')
+		striped_lines=content.split('\n')
 		striped_lines=list(map(lambda x: x.strip(),striped_lines))
 		striped_lines=list(filter(lambda x: x!='',striped_lines))
 		

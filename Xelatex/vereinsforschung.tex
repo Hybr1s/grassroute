@@ -18,7 +18,19 @@
 \usepackage[hyphens]{url}
 \usepackage{mathtools}
 \usepackage{subscript}
+\usepackage{pdfpages}
 
+\usepackage{listings}
+\lstset{numbers=left, 
+		  numberstyle=\tiny, 
+		  numbersep=5pt,
+		  language=python,
+           basicstyle=\ttfamily,
+           keywordstyle=\color{blue}\ttfamily,
+           stringstyle=\color{red}\ttfamily,
+           commentstyle=\color{green}\ttfamily,
+          breaklines=true
+          }
 \usepackage[backend=biber,  citestyle=verbose-ibid]{biblatex}
 \addbibresource[datatype=bibtex]{/Users/Hybr1s/Documents/Uniarbeit/Vereinsforschung/Xelatex/Vereinsforschung.bib}
 
@@ -139,7 +151,6 @@ M.A. Medien und Gesellschaft \\ Fachsemester: 7
 
 \onehalfspacing
 \renewcommand{\thesection}{\arabic{section}}
-\renewcommand{\thesection}{\arabic{section}}
 \setcounter{section}{0}
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -164,30 +175,10 @@ M.A. Medien und Gesellschaft \\ Fachsemester: 7
 %%%%%Teil 1%%%%%
 %########################
 %########################
-%\input{Kapitel/1.einleitung.tex}
+\input{Kapitel/1.einleitung.tex}
 
 %\input{Kapitel/2.promotionsordnungen.tex}
 
-
-
-
-
-
-
-%########################
-%########################
-%%%%%Teil 2%%%%%
-%########################
-%########################
-
-\input{Kapitel/1.einleitung.tex}
-
-
-%########################
-%########################
-%%%%%Teil 3 Praxis%%%%%
-%########################
-%########################
 
 %Der Versuch sich über Theorie zu nähern. Was ist Kunst, Was ist Wissenschaft, was sind mögliche Vereinigungspunkte. Das Produkt, Kuhn wissenschaftliche Paradigmen, Repräsentation und Interpretation ... Künstlerische Praxis als magische Blackbox 
 
@@ -195,8 +186,8 @@ M.A. Medien und Gesellschaft \\ Fachsemester: 7
 %\input{Kapitel/7.KunstalsParadigma.tex}
 %\input{Kapitel/8.AesthetikalsForschungsgebiet.tex}
 
-
-
+\newpage
+\input{Kapitel/anhang.tex}
 
 %Die Methode der Kunst - Näherung von der Praxis
 %Paul Feyerabend 

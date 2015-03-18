@@ -5,7 +5,7 @@ import urllib
 import unicodecsv as csv
 import requests
 
-with open('vereinsverzeichniseu.csv', 'w') as csvfile:
+with open('VereinsVerzeichniseu.csv', 'w') as csvfile:
 	fieldnames = ['Name','Beschreibung','Anschrift','PLZ','Stadt','Ansprechpartner','Telefon', 'Telefax', 'Mail', 'Website']
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	v=0
